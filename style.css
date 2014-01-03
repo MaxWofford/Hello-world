@@ -1,4 +1,4 @@
-p.speech {
+p#speech {
 	position: relative;
 	width: 200px;
 	height: 100px;
@@ -14,7 +14,7 @@ p.speech {
 	box-shadow: 2px 2px 4px #888;
 }
 
-p.speech:before {
+p#speech:before {
 	content: ' ';
 	position: absolute;
 	width: 0;
@@ -25,7 +25,7 @@ p.speech:before {
 	border-color: #666 transparent transparent #666;
 }
 
-p.speech:after {
+p#speech:after {
 	content: ' ';
 	position: absolute;
 	width: 0;

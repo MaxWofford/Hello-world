@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Hello, world</title>
+	<script type="text/javascript" href="script.js"></script>
 </head>
 <body>
 	<div class="title">
@@ -13,9 +14,20 @@
 	<div id="container">
 		<div>
 			<img src="world.png">
-			<div class="text"><p class="speech">Hello!</p></div>
+			<div class="text"><p id="speech">Hello!</p></div>
+			<button id="Button1" onclick="change();"></button>
 		</div>
 	</div>
 	<div class="signature"></div>
+	<script type="text/javascript">
+	function change()
+	{
+	    var elem = document.getElementById("myButton1");
+	    if (document.getElementById('speech').innerHTML =="Hello!") document.getElementByI	('	speech').innerHTML = "Sup";
+	    else document.getElementById('speech').innerHTML = "Hello!";
+
+	    
+	}
+	</script>
 </body>
 </html>

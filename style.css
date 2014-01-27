@@ -57,12 +57,13 @@ body {
 
 .title {
 	float: center;
-	padding: 5%;
+	padding: 2%;
 	text-align: center;
 	color: #ffffff;
   position: fixed;
   width: 100%;
     top: 5%;
+    height: 30%;
 }
 
 .title h1 {

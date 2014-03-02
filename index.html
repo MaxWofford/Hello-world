@@ -1,18 +1,18 @@
-
 <!DOCTYPE html>
 <html>
-<!--Hello fellow developer! This is just a fun little place for me to personally test out a few translation APIs.
-EDIT: nvm, turns out I can't find a free one-->
-<!--Background stars credit to http://codepen.io/AlienPiglet/pen/kJqvy-->
+<!--Hello fellow developer! This is just a fun little place for me to test out random stuff-->
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Hello, world</title>
 	<script type="text/javascript" href="/js/script.js"></script>
   <script src='https://cdn.firebase.com/v0/firebase.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+  
 
 </head>
+
 <body>
+  <div ng-app="">
   <div class="starcontainer">
 	  <div class="sContainer" id="sFirst">
       <div class="star one">      
@@ -93,45 +93,18 @@ EDIT: nvm, turns out I can't find a free one-->
 	<div id="container">
 		<div>
 			<img src="world.png">
-			<div class="text"><p id="speech">Hello!</p></div>
+			<div class="text"><p id="speech">{{"Hello" + " " + data.message + "!"}}</p></div>
 			<button id="Button1" onclick="change();"></button>
 		</div>
     <br>
     <div style="float: center;">
     <div id='messagesDiv'></div>
-    <input type='text' id='nameInput' placeholder='Name'>
-    <input type='text' id='messageInput' placeholder='Message'>
-    <script>
-      var myDataRef = new Firebase('https://hello-earth.firebaseio.com/');
-      $('#messageInput').keypress(function (e) {
-        if (e.keyCode == 13) {
-          var name = $('#nameInput').val();
-          var text = $('#messageInput').val();
-          myDataRef.push({name: name, text: text});
-          $('#messageInput').val('');
-        }
-      });
-      myDataRef.on('child_added', function(snapshot) {
-        var message = snapshot.val();
-        displayChatMessage(message.name, message.text);
-      });
-      function displayChatMessage(name, text) {
-        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
-        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-      };
-    </script>
+    <input type="text" ng-model="data.message" placeholder="Type your name!">
 	</div>
 	<div class="signature"></div>
   </div>
-	<script type="text/javascript">
-	function change()
-	{
-	    var elem = document.getElementById("myButton1");
-	    if (document.getElementById('speech').innerHTML =="Hello!") document.getElementByI	('	speech').innerHTML = "Sup";
-	    else document.getElementById('speech').innerHTML = "Hello!";
-	}
+  </div>
 
-	</script>
-
+  <script type="text/javascript" src="vendor/angularjs/angular.js"></script>
 </body>
 </html>
